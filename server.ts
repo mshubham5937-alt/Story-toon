@@ -13,7 +13,7 @@ ffmpeg.setFfmpegPath(ffmpegPath as string);
 const app = express();
 app.use(express.json({ limit: '500mb' })); // Increase limit for base64 data
 
-const PORT = 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 // Job tracking
 interface Job {
